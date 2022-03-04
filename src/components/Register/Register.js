@@ -8,7 +8,8 @@ class Register extends React.Component {
     this.state = {
       signInEmail: '',
       signInPassword: '',
-      name: ''
+      name: '',
+      subMessage: ''
     }
   }
   onEmailChange = (event) => {
@@ -22,6 +23,16 @@ class Register extends React.Component {
   }
 
   onSubmitSignIn =() => {
+    if(!this.state.signInEmail.includes('@')) {
+      this.setState('Please include a @')
+  } else if(this.state.signInPassword.length < 6) {
+      this.setState('Your password is too short')
+  } 
+  else if(!this.state.signInPassword.match(/[$@#&!]+/) || !this.state.signInPassword.match(/[0-9]+/)) {
+      this.setState('Your password must have at least 1 number and special character')
+  } else if(this.state.name === '') {
+      this.setState('Please include a name')
+  } else {
     fetch('https://afternoon-hollows-91457.herokuapp.com/register', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
@@ -38,8 +49,10 @@ class Register extends React.Component {
         this.props.onRouteChange('home')
       }
     })
+}
+}
+   
     
-  }
   render() {
     
     return (
@@ -61,6 +74,7 @@ class Register extends React.Component {
             <label className="db fw6 lh-copy f6" htmlfor="password">Password</label>
             <input onChange={this.onPasswordChange}  className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="password" name="password"  id="password"/>
           </div>
+          <p className='dark-red'>{this.state.subMessage}</p>
         </fieldset>
         <div className="">
           <input onClick={this.onSubmitSignIn} 
