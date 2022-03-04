@@ -24,14 +24,14 @@ class Register extends React.Component {
 
   onSubmitSignIn =() => {
     if(!this.state.signInEmail.includes('@')) {
-      this.setState('Please include a @')
+      this.setState({subMessage: 'Please include a @'})
   } else if(this.state.signInPassword.length < 6) {
-      this.setState('Your password is too short')
+      this.setState({subMessage: 'Your password is too short'})
   } 
   else if(!this.state.signInPassword.match(/[$@#&!]+/) || !this.state.signInPassword.match(/[0-9]+/)) {
-      this.setState('Your password must have at least 1 number and special character')
+      this.setState({subMessage:'Your password must have at least 1 number and special character'})
   } else if(this.state.name === '') {
-      this.setState('Please include a name')
+      this.setState({subMessage: 'Please include a name'})
   } else {
     fetch('https://afternoon-hollows-91457.herokuapp.com/register', {
       method: 'post',
