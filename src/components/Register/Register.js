@@ -56,8 +56,8 @@ class Register extends React.Component {
   render() {
     
     return (
-      <article className='br3 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-1 mw6 shadow-1 center'>
-        <main className="pa4 black-80">
+      <article className='br3 ba dark-gray b--white-10 mv4 w-100 w-50-m w-25-1 mw6 shadow-1 center'>
+        <main className="pa4 white-80">
       <div className="measure">
         <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
           <legend className="f4 fw6 ph0 mh0">Register</legend>
@@ -78,7 +78,7 @@ class Register extends React.Component {
         </fieldset>
         <div className="">
           <input onClick={this.onSubmitSignIn} 
-          className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib pointer" 
+          className="b ph3 pv2 input-reset ba b--white bg-transparent grow pointer f6 dib pointer" 
           type="submit" 
           value="Register"/>
         </div>

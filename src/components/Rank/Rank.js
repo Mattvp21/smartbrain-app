@@ -6,10 +6,10 @@ import './Rank.css'
 const Rank = ({username, userentries}) => {
     return (
         <div>
-            <div className='black f3'>
+            <div className='white f3'>
                 {`${username}, your current rank is....`}
             </div>
-            <div className='black f1'>
+            <div className='white f1'>
                 {userentries}
             </div>
         </div>

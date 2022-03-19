@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Courier New', monospace;
-  background: linear-gradient(to bottom, rgb(187, 187, 187), rgb(28, 28, 29));
+  background: linear-gradient(10deg, #a1d9b4 20%, #32988a 40%, #000e3c 70%);
   height: 130vh;
   
 }
@@ -10,3 +10,4 @@ body {
 button {
   cursor: pointer;
 }
+
